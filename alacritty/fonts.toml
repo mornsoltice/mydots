@@ -1,0 +1,61 @@
+[font]
+size = 14
+
+builtin_box_drawing = true
+
+#normal = { family = "Geist Mono Nerd Font", style = "Medium" }
+#bold = { family = "Geist Mono Nerd Font", style = "Bold" }
+#italic = { family = "Geist Mono Nerd Font", style = "Italic" }
+#bold_italic = { family = "Geist Mono Nerd Font", style = "Bold Italic" }
+
+#normal = { family = "Fira Code Nerd Font", style = "Regular" }
+#bold = { family = "Fira Code Nerd Font", style = "Medium" }
+#italic = { family = "Fira Code Nerd Font", style = "Italic" }
+#bold_italic = { family = "Fira Code Nerd Font", style = "Bold Italic" }
+
+#normal = { family = "IosevkaTree Nerd Font", style = "Regular" }
+#bold = { family = "IosevkaTree Nerd Font", style = "Medium" }
+#italic = { family = "IosevkaTree Nerd Font", style = "Italic" }
+#bold_italic = { family = "IosevkaTree Nerd Font", style = "Bold Italic" }
+
+normal = { family = "Iosevka Nerd Font", style = "Regular" }
+bold = { family = "Iosevka Nerd Font", style = "Medium" }
+italic = { family = "Iosevka Nerd Font", style = "Italic" }
+bold_italic = { family = "Iosevka Nerd Font", style = "Bold Italic" }
+
+#normal = { family = "Comic Mono NF", style = "Regular" }
+#bold = { family = "Comic Mono NF", style = "Regular" }
+#italic = { family = "Comic Mono NF", style = "Italic" }
+#bold_italic = { family = "Comic Mono NF", style = "Bold Italic" }
+
+#normal = { family = "Comic Shanns Nerd Font", style = "Regular" }
+#bold = { family = "Comic Shanns Nerd Font", style = "Regular" }
+#italic = { family = "Comic Mono NF", style = "Italic" }
+#bold_italic = { family = "Comic Mono NF", style = "Bold Italic" }
+
+#normal = { family = "Operator Mono Nerd Font", style = "Book Italic" }
+#bold = { family = "Operator Mono Nerd Font", style = "Book Italic" }
+#italic = { family = "Operator Mono Nerd Font", style = "Book Italic" }
+#bold_italic = { family = "Operator Mono Nerd Font", style = "Book Italic" }
+
+#normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+#bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+#italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+#bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+
+#normal = { family = "Liga SF Mono Nerd Font", style = "Medium" }
+#bold = { family = "Liga SF Mono Nerd Font", style = "Bold" }
+#italic = { family = "Liga SF Mono Nerd Font", style = "Italic" }
+#bold_italic = { family = "Liga SF Mono Nerd Font", style = "Bold Italic" }
+
+#normal = { family = "Roboto Mono Nerd Font", style = "Medium" }
+#bold = { family = "Roboto Mono Nerd Font", style = "Bold" }
+#italic = { family = "Roboto Mono Nerd Font", style = "Italic" }
+#bold_italic = { family = "Roboto Mono Nerd Font", style = "Bold Italic" }
+
+#[font.offset]
+#y = 15
+
+#[font.glyph_offset] 
+#y = 10
+

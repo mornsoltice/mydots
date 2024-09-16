@@ -1,0 +1,126 @@
+#
+# List of features:
+#
+# ^:) user@hostname master[✚ 1](prod@usw2) pwd [1]$
+# ^ ^   ^     ^       ^           ^    ^    ^   ^
+# 1 2   3     4       5           6    7    8   9
+#
+# 1. Every subshell gets an additional ^ based on SHLVL
+# 2. Happy and sad face for command success/failure
+# 3. Username when it's not the login user
+# 4. Hostname if on an SSH connection
+# 5. Git status
+# 6. AWS profile
+# 7. AWS region, abbreviated if possible
+# 8. Current directory, truncated if too long
+# 9. Number of background jobs
+#
+
+add_newline = false
+
+format = """[\
+$shlvl\
+$character\
+$python\
+$username\
+$hostname\
+$git_branch$git_commit$git_state$git_status\
+$aws\
+$kubernetes\
+$directory\
+$jobs\
+](cyan)\\$ """
+
+[character]
+success_symbol = "[:\\)](cyan)"
+error_symbol = "[:\\(](red)"
+format = "$symbol"
+
+[shlvl]
+threshold = 0
+symbol = "^"
+format = "[$symbol](red)"
+repeat = true
+disabled = false
+
+[kubernetes]
+disabled = true
+format = " [\\($context/$namespace\\)]($style)"
+style = "green"
+
+[kubernetes.context_aliases] 
+pd-kubectx = "pd"
+
+#[shlvl]
+#disabled = false
+#threshold = 0
+
+# https://github.com/starship/starship/issues/2688
+# [jobs]
+# format = "\\[[$number](red)\\]"
+# threshold = 0
+
+[jobs]
+format = "\\[[$symbol$number](red)\\]"
+threshold = 1
+
+[hostname]
+ssh_only = true
+format = "[@$hostname:](cyan)"
+
+[username]
+style_user = "cyan"
+style_root = "red bold"
+format = " [$user]($style)"
+show_always = false
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = " [$path](cyan)"
+truncation_symbol = "…/"
+
+# git: [master|✚ 1]
+[git_branch]
+format = " [$branch](purple)"
+only_attached = true
+
+[git_commit]
+format = " [$hash](purple)"
+only_detached = true
+
+[git_state]
+format = "[|$state:$progress_current/$progress_total](purple)"
+
+# this is meant to work as closely as possible like
+# github.com:magicmonty/bash-git-prompt
+[git_status]
+format = "[(\\[$conflicted$staged$modified$deleted$renamed$untracked$stashed$ahead_behind\\])]($white)"
+
+ahead    = "↑${count}"
+diverged = "↑${ahead_count}↓${behind_count}"
+behind   = "↓${count}"
+
+conflicted = "[ ✖$count✖ ](bold red)"
+staged     = "[✚$count](green)"
+modified   = "[✚$count](bold blue)"
+deleted    = "[-$count](red)"
+renamed    = "[»$count](green)"
+untracked  = "[??$count](cyan)"
+stashed    = "[⚑$count](bold blue)"
+
+# only care about virtualenv
+[python]
+format = '[( \($virtualenv\))](yellow)'
+
+[aws]
+format = "[( \\($profile(@$region)\\))](yellow)"
+
+[aws.region_aliases]
+us-west-2    = "usw2"
+us-west-1    = "usw1"
+us-east-2    = "use2"
+us-east-1    = "use1"
+ca-central-1 = "ca"
+eu-west-1    = "euw1"
+eu-central-1 = "euc1"
